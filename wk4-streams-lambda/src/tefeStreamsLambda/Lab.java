@@ -68,21 +68,15 @@ public class Lab {
     }
 
     @Test
-    public static void getAverageSalaries() {
-        List<Employee> males = employees.stream()
-                .filter(e -> e.getGender().equals("Male"))
+    public static void getAverageSalaries(String gender) {
+        List<Employee> mOrf = employees.stream()
+                .filter(e -> e.getGender().equals(gender))
                 .collect(Collectors.toList());
 
-        List<Employee> females = employees.stream()
-                .filter(e -> e.getGender().equals("Female"))
-                .collect(Collectors.toList());
-        double averageMale = males.stream()
-                .reduce((double)0,(acc, cur) -> acc + cur.getSalary(), Double::sum) / males.size();
-        double averageFemale = females.stream()
-                .reduce((double)0,(acc, cur) -> acc + cur.getSalary(), Double::sum) / females.size();
-
-        System.out.println("Averages: Male: " + averageMale + " Female: " + averageFemale);
-        System.out.println("Averages: Male: " + averageMale + " Female: " + averageFemale);
+        double average = mOrf.stream()
+                .reduce((double)0,(acc, cur) -> acc + cur.getSalary(), Double::sum) / mOrf.size();
+        
+        System.out.println("Averages: Male: " + average);
     }
 
     @Test
