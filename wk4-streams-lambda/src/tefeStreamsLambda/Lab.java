@@ -79,7 +79,7 @@ public class Lab {
         double averageMale = males.stream()
                 .reduce((double)0,(acc, cur) -> acc + cur.getSalary(), Double::sum) / males.size();
         double averageFemale = females.stream()
-                .reduce((double)0,(acc, cur) -> acc + cur.getSalary(), Double::sum) / males.size();
+                .reduce((double)0,(acc, cur) -> acc + cur.getSalary(), Double::sum) / females.size();
 
         System.out.println("Averages: Male: " + averageMale + " Female: " + averageFemale);
         System.out.println("Averages: Male: " + averageMale + " Female: " + averageFemale);
