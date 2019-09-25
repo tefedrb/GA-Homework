@@ -75,7 +75,7 @@ public class Lab {
 
         double average = mOrf.stream()
                 .reduce((double)0,(acc, cur) -> acc + cur.getSalary(), Double::sum) / mOrf.size();
-        
+
         System.out.println("Averages: Male: " + average);
     }
 
