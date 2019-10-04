@@ -25,7 +25,7 @@ public class SongController {
     }
 
     @DeleteMapping("/removesong/{songId}")
-    public HttpStatus deleteSong(String songId){
+    public HttpStatus deleteSong(@PathVariable String songId){
         return songService.deleteSong(songId);
     }
 

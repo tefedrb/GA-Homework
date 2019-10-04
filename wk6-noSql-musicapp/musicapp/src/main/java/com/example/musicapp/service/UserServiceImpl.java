@@ -3,6 +3,7 @@ package com.example.musicapp.service;
 import com.example.musicapp.model.User;
 import com.example.musicapp.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -25,5 +26,11 @@ public class UserServiceImpl implements UserService {
     @Override
     public User findUserByEmail(String email){
         return userRepository.findByEmail(email);
+    }
+
+    @Override
+    public HttpStatus deleteUserById(String userId){
+        userRepository.deleteById(userId);
+        return HttpStatus.valueOf(200);
     }
 }

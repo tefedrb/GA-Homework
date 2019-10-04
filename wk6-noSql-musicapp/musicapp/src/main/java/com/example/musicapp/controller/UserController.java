@@ -3,6 +3,7 @@ package com.example.musicapp.controller;
 import com.example.musicapp.model.User;
 import com.example.musicapp.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -30,5 +31,10 @@ public class UserController {
     @GetMapping("/user/{email}")
     public User getUserByEmail(@PathVariable String email){
         return userService.findUserByEmail(email);
+    }
+
+    @DeleteMapping("/user/delete/{userId}")
+    public HttpStatus deleteByUsername(@PathVariable String userId){
+        return userService.deleteUserById(userId);
     }
 }
