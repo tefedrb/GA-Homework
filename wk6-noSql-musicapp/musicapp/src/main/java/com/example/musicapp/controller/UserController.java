@@ -34,7 +34,7 @@ public class UserController {
     }
 
     @DeleteMapping("/user/delete/{userId}")
-    public HttpStatus deleteByUsername(@PathVariable String userId){
+    public HttpStatus deleteByUserId(@PathVariable String userId){
         return userService.deleteUserById(userId);
     }
 }
