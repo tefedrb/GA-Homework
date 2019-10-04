@@ -3,6 +3,7 @@ package com.example.musicapp.controller;
 import com.example.musicapp.model.Song;
 import com.example.musicapp.service.SongService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -23,9 +24,9 @@ public class SongController {
         return songService.saveSong(song);
     }
 
-    @DeleteMapping("/removesong")
-    public void removeSong(Song song){
-        songService.deleteSong(song);
+    @DeleteMapping("/removesong/{songId}")
+    public HttpStatus deleteSong(String songId){
+        return songService.deleteSong(songId);
     }
 
 }

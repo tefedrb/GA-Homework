@@ -3,6 +3,7 @@ package com.example.musicapp.service;
 import com.example.musicapp.model.Song;
 import com.example.musicapp.repository.SongRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -23,7 +24,8 @@ public class SongServiceImpl implements SongService{
     }
 
     @Override
-    public void deleteSong(Song song){
-        songRepository.delete(song);
+    public HttpStatus deleteSong(String songId){
+        songRepository.deleteById(songId);
+        return HttpStatus.valueOf(200);
     }
 }
