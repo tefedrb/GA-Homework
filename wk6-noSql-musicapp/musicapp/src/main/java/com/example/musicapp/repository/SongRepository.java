@@ -8,5 +8,5 @@ public interface SongRepository extends MongoRepository<Song, String> {
     public void deleteById (String songId);
 
     @Query(" {'title' : ?0} ")
-    public Song findByTitle (String title, String newTitle);
+    public Song findByTitle (String title);
 }

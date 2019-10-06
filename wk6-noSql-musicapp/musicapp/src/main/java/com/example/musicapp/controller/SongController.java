@@ -24,9 +24,13 @@ public class SongController {
         return songService.saveSong(song);
     }
 
+    @PutMapping("/update/{title}/{newTitle}")
+    public Song updateSong(@PathVariable String title, @PathVariable String newTitle){
+        return songService.updateSong(title, newTitle);
+    }
+
     @DeleteMapping("/removesong/{songId}")
     public HttpStatus deleteSong(@PathVariable String songId){
         return songService.deleteSong(songId);
     }
-
 }

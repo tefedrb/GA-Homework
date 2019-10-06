@@ -10,4 +10,5 @@ public interface UserService {
     public User findUserByEmail(String email);
     public HttpStatus deleteUserById(String userId);
     public List<User> listUsers();
+    public User updateUserEmail(String email, String newEmail);
 }

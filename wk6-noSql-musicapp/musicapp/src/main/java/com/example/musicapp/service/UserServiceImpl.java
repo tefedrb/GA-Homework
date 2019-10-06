@@ -33,4 +33,11 @@ public class UserServiceImpl implements UserService {
         userRepository.deleteById(userId);
         return HttpStatus.valueOf(200);
     }
+
+    @Override
+    public User updateUserEmail(String email, String newEmail){
+        User updated = userRepository.findByEmail(email);
+        updated.setEmail(newEmail);
+        return userRepository.save(updated);
+    }
 }

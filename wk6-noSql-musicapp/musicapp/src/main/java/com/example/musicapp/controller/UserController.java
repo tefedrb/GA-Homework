@@ -13,11 +13,6 @@ public class UserController {
     @Autowired
     UserService userService;
 
-    @GetMapping("/hello")
-    public String helloWorld(){
-        return "Hello World";
-    }
-
     @GetMapping("/list")
     public List<User> listUsers(){
         return userService.listUsers();
@@ -26,6 +21,11 @@ public class UserController {
     @PostMapping("/signup")
     public User createUser(@RequestBody User newUser){
         return userService.createUser(newUser);
+    }
+
+    @PutMapping("/user/update/{email}/{newEmail}")
+    public User updateUserByEmail(@PathVariable String email, @PathVariable String newEmail){
+        return userService.updateUserEmail(email, newEmail);
     }
 
     @GetMapping("/user/{email}")

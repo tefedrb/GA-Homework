@@ -9,6 +9,6 @@ import java.util.List;
 public interface SongService {
    public Song saveSong(Song song);
    public HttpStatus deleteSong(String songId);
-
+   public Song updateSong(String title, String newTitle);
    public List<Song> listSongs();
 }

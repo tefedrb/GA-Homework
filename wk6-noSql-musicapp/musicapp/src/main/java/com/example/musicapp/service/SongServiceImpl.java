@@ -28,4 +28,11 @@ public class SongServiceImpl implements SongService{
         songRepository.deleteById(songId);
         return HttpStatus.valueOf(200);
     }
+
+    @Override
+    public Song updateSong(String title, String newTitle){
+        Song updated = songRepository.findByTitle(title);
+        updated.setTitle(newTitle);
+        return songRepository.save(updated);
+    }
 }
