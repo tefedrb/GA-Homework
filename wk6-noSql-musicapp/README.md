@@ -7,10 +7,10 @@ At first I was thinking I should separate the song and the user and have them re
 Being a fan of JavaScript, I'd pick NoSQL over SQL.
 
 ## What went right?
-I was able to create full CRUD for both songs and users.
+I was able to create full CRUD operations for both songs and users.
 
 ## Challenges?
-I realized I should probably spend more time designing a way to have a song collection and a user collection that are more aware of each other if I want the logic of the database to be sound.
+I realized I should probably have spent more time designing a way to have a song collection and a user collection that were more aware of each other. A user can have songs, but those songs don't reflect in the song collection.
 
 ## Which part did you enjoy working on the most?
 I enjoyed looking up the data I created in mongo.
